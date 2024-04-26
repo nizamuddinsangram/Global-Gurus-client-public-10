@@ -1,7 +1,17 @@
 // eslint-disable-next-line react/prop-types
-const MyListTable = ({ place }) => {
+const MyListTable = ({ place, setMyPlaces, myPlaces }) => {
+  console.log(myPlaces);
   const handleDelete = (id) => {
     console.log(id);
+    fetch(`http://localhost:7000/myPlaces/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const remaining = myPlaces.filter((p) => p._id !== id);
+        setMyPlaces(remaining);
+      });
   };
   return (
     <>

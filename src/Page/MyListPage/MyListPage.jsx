@@ -29,7 +29,12 @@ const MyListPage = () => {
           <tbody>
             {/* row 1 */}
             {myPlaces?.map((place) => (
-              <MyListTable key={place._id} place={place}></MyListTable>
+              <MyListTable
+                key={place._id}
+                place={place}
+                setMyPlaces={setMyPlaces}
+                myPlaces={myPlaces}
+              ></MyListTable>
             ))}
           </tbody>
           {/* foot */}
