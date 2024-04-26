@@ -2,13 +2,15 @@ import { useContext } from "react";
 import Swal from "sweetalert2";
 
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../../public/gradient-abstract-wireframe-background_23-2149003417.jpg";
 import img1 from "../../../public/login112.avif";
 import { AuthContext } from "../../Provider/AuthProvider";
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
   const {
     register,
     handleSubmit,
@@ -26,7 +28,7 @@ const Login = () => {
           text: "You have successfully Login.",
         });
         console.log(result.user);
-        navigate("/");
+        navigate(location.state ? location.state : "/");
       })
       .catch((err) => {
         Swal.fire({
@@ -46,7 +48,7 @@ const Login = () => {
           text: "You have successfully google login.",
         });
         console.log(result.user);
-        navigate("/");
+        navigate(location.state ? location.state : "/");
       })
       .catch((err) => {
         Swal.fire({
