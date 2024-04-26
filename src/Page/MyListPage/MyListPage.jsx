@@ -7,7 +7,7 @@ const MyListPage = () => {
   const [myPlaces, setMyPlaces] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:7000/myPlaces/${user?.email}`)
+    fetch(`http://localhost:7000/myList/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyPlaces(data);
