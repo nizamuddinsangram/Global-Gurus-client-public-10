@@ -6,6 +6,7 @@ import Home from "../Page/Home/Home";
 import Login from "../Page/Login/Login";
 import MyListPage from "../Page/MyListPage/MyListPage";
 import Register from "../Page/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addTourist",
-        element: <AddTouristSpot />,
+        element: (
+          <PrivateRoute>
+            <AddTouristSpot />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/allTourists",
@@ -36,7 +41,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/myList",
-        element: <MyListPage />,
+        element: (
+          <PrivateRoute>
+            <MyListPage />
+          </PrivateRoute>
+        ),
         // loader: ({ params }) =>
         //   fetch(`http://localhost:7000/myPlaces${params.id}`),
       },
