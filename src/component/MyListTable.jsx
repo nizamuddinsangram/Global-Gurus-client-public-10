@@ -1,5 +1,8 @@
+// eslint-disable-next-line react/prop-types
 const MyListTable = ({ place }) => {
-  console.log(place);
+  const handleDelete = (id) => {
+    console.log(id);
+  };
   return (
     <>
       <tr>
@@ -19,7 +22,12 @@ const MyListTable = ({ place }) => {
         <td>{place?.location}</td>
         <td>Update</td>
         <th>
-          <button className="btn btn-ghost btn-xs">Delete</button>
+          <button
+            onClick={() => handleDelete(place?._id)}
+            className="btn btn-ghost btn-xs"
+          >
+            Delete
+          </button>
         </th>
       </tr>
     </>
