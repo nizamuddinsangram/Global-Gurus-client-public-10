@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "../component/Navbar";
 
 const Main = () => {
   return (
     <div>
-      <p className="text-center bg-gray-400 py-10">Navbar</p>
+      <Navbar />
       <Outlet />
     </div>
   );

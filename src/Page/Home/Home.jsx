@@ -1,10 +1,9 @@
-import Navbar from "../../component/Navbar";
+import Banner from "../../component/Banner";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <p>my home my peace </p>
+      <Banner />
     </div>
   );
 };
