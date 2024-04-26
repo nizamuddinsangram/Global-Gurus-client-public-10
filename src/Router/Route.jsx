@@ -6,6 +6,7 @@ import Home from "../Page/Home/Home";
 import Login from "../Page/Login/Login";
 import MyListPage from "../Page/MyListPage/MyListPage";
 import Register from "../Page/Register/Register";
+import MyListUpdate from "../component/MyListUpdate";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
@@ -46,8 +47,10 @@ const router = createBrowserRouter([
             <MyListPage />
           </PrivateRoute>
         ),
-        // loader: ({ params }) =>
-        //   fetch(`http://localhost:7000/myPlaces${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: <MyListUpdate />,
       },
     ],
   },

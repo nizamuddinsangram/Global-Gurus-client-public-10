@@ -13,6 +13,18 @@ const MyListPage = () => {
         setMyPlaces(data);
       });
   }, [user?.email]);
+  const handleDelete = (id) => {
+    console.log(id);
+    fetch(`http://localhost:7000/myPlaces/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const remaining = myPlaces.filter((p) => p._id !== id);
+        setMyPlaces(remaining);
+      });
+  };
   return (
     <>
       <div className="overflow-x-auto">
@@ -32,8 +44,7 @@ const MyListPage = () => {
               <MyListTable
                 key={place._id}
                 place={place}
-                setMyPlaces={setMyPlaces}
-                myPlaces={myPlaces}
+                handleDelete={handleDelete}
               ></MyListTable>
             ))}
           </tbody>
