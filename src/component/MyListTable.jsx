@@ -3,11 +3,6 @@ const MyListTable = ({ place }) => {
   return (
     <>
       <tr>
-        <th>
-          <label>
-            <input type="checkbox" className="checkbox" />
-          </label>
-        </th>
         <td>
           <div className="flex items-center gap-3">
             <div className="avatar">
@@ -24,7 +19,7 @@ const MyListTable = ({ place }) => {
         <td>{place?.location}</td>
         <td>Update</td>
         <th>
-          <button className="btn btn-ghost btn-xs">Details</button>
+          <button className="btn btn-ghost btn-xs">Delete</button>
         </th>
       </tr>
     </>
