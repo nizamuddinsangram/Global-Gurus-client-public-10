@@ -46,6 +46,7 @@ const Login = () => {
           text: "You have successfully google login.",
         });
         console.log(result.user);
+        navigate("/");
       })
       .catch((err) => {
         Swal.fire({

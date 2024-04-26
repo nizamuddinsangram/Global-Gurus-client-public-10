@@ -140,9 +140,9 @@ const Register = () => {
                 )}
               </div>
               <p className="text-xs  sm:px-6 ">
-                Dont have an account?{" "}
-                <Link to="/register" className="underline text-gray-100">
-                  Register
+                Already have an account?{" "}
+                <Link to="/login" className="underline text-gray-100">
+                  Login
                 </Link>
               </p>
               <button
