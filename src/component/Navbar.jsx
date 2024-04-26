@@ -1,5 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 const Navbar = () => {
+  const { logOut, user, setUser } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut();
+    setUser(null);
+  };
   return (
     <>
       <div className="navbar bg-base-100">
@@ -27,27 +34,43 @@ const Navbar = () => {
             >
               <li>
                 <NavLink
-                  to="/messages"
+                  to="/"
                   className={({ isActive }) =>
                     isActive ? "text-blue-600 font-semibold underline" : ""
                   }
                 >
-                  Messages
+                  HOME
                 </NavLink>
               </li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <NavLink
+                  to="/allTourists"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-600 font-semibold underline" : ""
+                  }
+                >
+                  ALL TOURIST
+                </NavLink>
               </li>
               <li>
-                <a>Item 3</a>
+                <NavLink
+                  to="/addTourist"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-600 font-semibold underline" : ""
+                  }
+                >
+                  AddTourist
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/myList"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-600 font-semibold underline" : ""
+                  }
+                >
+                  MY LIST
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -98,7 +121,23 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          {user ? (
+            <>
+              <img
+                src={user?.photoURL}
+                alt="img"
+                title={user?.displayName}
+                className="w-10 h-10 rounded-full object-cover"
+              />
+              <button className="btn btn-sm" onClick={handleLogOut}>
+                logOut
+              </button>
+            </>
+          ) : (
+            <Link to="/login" className="btn btn-sm">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </>
