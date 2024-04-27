@@ -6,6 +6,7 @@ import Home from "../Page/Home/Home";
 import Login from "../Page/Login/Login";
 import MyListPage from "../Page/MyListPage/MyListPage";
 import Register from "../Page/Register/Register";
+import Details from "../component/Details";
 import MyListUpdate from "../component/MyListUpdate";
 import PrivateRoute from "./PrivateRoute";
 
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:7000/myPlaces"),
       },
       {
         path: "/login",
@@ -53,6 +55,14 @@ const router = createBrowserRouter([
         element: <MyListUpdate />,
         loader: ({ params }) =>
           fetch(`http://localhost:7000/singleList/${params.id}`),
+      },
+      {
+        path: "details/:id",
+        element: <Details />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:7000/singleList/${params.id}`),
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:7000/details/${params.id}`),
       },
     ],
   },

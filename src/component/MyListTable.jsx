@@ -18,7 +18,7 @@ const MyListTable = ({ place, handleDelete }) => {
         </td>
         <td>{place?.location}</td>
         <td>
-          <Link to={`update/${place?._id}`}>Update</Link>
+          <Link to={`/update/${place?._id}`}>Update</Link>
         </td>
         <th>
           <button
