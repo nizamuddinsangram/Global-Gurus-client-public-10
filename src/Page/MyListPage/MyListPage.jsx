@@ -32,13 +32,13 @@ const MyListPage = () => {
           {/* head */}
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
+              <th>Place Name</th>
+              <th>Location</th>
+              <th>Action</th>
+              <th>Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="">
             {/* row 1 */}
             {myPlaces?.map((place) => (
               <MyListTable

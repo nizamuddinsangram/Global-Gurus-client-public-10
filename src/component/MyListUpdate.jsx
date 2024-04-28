@@ -49,10 +49,10 @@ const MyListUpdate = () => {
 
   return (
     <>
-      <div className="w-4/5 mx-auto bg-white p-6 rounded-lg shadow-md">
+      <div className="w-4/5 my-20 mx-auto bg-white p-6 rounded-lg shadow-md">
         <form onSubmit={handleUpdate} className="flex flex-col space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-700 mb-4">
-            Add Tourist Spot
+          <h2 className="text-2xl text-center font-semibold text-gray-700 mb-4">
+            Update Tourist Spot
           </h2>
 
           {/* Two fields in one row */}
@@ -261,7 +261,7 @@ const MyListUpdate = () => {
 
           <button
             type="submit"
-            className="w-full py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition duration-150 ease-in-out"
+            className="w-full py-2  bg-cyan-400 text-white font-bold rounded hover:bg-blue-700 transition duration-150 ease-in-out"
           >
             Update Profile
           </button>
