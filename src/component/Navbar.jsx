@@ -1,7 +1,21 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 const Navbar = () => {
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("retro");
+    } else {
+      setTheme("light");
+    }
+  };
+
   const { logOut, user, setUser } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut();
@@ -9,7 +23,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar   bg-opacity-50 bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -74,7 +88,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">Global Gurus</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -98,26 +112,30 @@ const Navbar = () => {
                 ALL TOURIST
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/addTourist"
-                className={({ isActive }) =>
-                  isActive ? "text-blue-600 font-semibold underline" : ""
-                }
-              >
-                AddTourist
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/myList"
-                className={({ isActive }) =>
-                  isActive ? "text-blue-600 font-semibold underline" : ""
-                }
-              >
-                MY LIST
-              </NavLink>
-            </li>
+            {user && (
+              <li>
+                <NavLink
+                  to="/addTourist"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-600 font-semibold underline" : ""
+                  }
+                >
+                  AddTourist
+                </NavLink>
+              </li>
+            )}
+            {user && (
+              <li>
+                <NavLink
+                  to="/myList"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-600 font-semibold underline" : ""
+                  }
+                >
+                  MY LIST
+                </NavLink>
+              </li>
+            )}
           </ul>
         </div>
         <div className="navbar-end">
@@ -138,6 +156,11 @@ const Navbar = () => {
               Login
             </Link>
           )}
+          <input
+            onChange={handleToggle}
+            type="checkbox"
+            className="toggle theme-controller"
+          />
         </div>
       </div>
     </>

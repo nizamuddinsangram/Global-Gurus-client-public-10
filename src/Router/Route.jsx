@@ -2,10 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import AddTouristSpot from "../Page/AddTouristSpot/AddTouristSpot";
 import AllTouristsPage from "../Page/AllTouristPage/AllTouristsPage";
+import ErrorPage from "../Page/ErrorPage/ErrorPage";
 import Home from "../Page/Home/Home";
 import Login from "../Page/Login/Login";
 import MyListPage from "../Page/MyListPage/MyListPage";
 import Register from "../Page/Register/Register";
+import CountryAllPlaces from "../component/CountryAllPlaces";
 import Details from "../component/Details";
 import MyListUpdate from "../component/MyListUpdate";
 import PrivateRoute from "./PrivateRoute";
@@ -14,7 +16,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    errorElement: <p>error </p>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -63,6 +65,12 @@ const router = createBrowserRouter([
           fetch(`http://localhost:7000/singleList/${params.id}`),
         // loader: ({ params }) =>
         //   fetch(`http://localhost:7000/details/${params.id}`),
+      },
+      {
+        path: "country/:countryName",
+        element: <CountryAllPlaces />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:7000/allCountry/${params.countryName}`),
       },
     ],
   },

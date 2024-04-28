@@ -40,7 +40,7 @@ const AddTouristSpot = () => {
       .then((data) => console.log(data));
   };
   return (
-    <div className="w-4/5 mx-auto bg-white p-6 rounded-lg shadow-md">
+    <div className="w-4/5 mx-auto  bg-white p-6 rounded-lg shadow-md">
       <form onSubmit={handleAddTourist} className="flex flex-col space-y-4">
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
           Add Tourist Spot

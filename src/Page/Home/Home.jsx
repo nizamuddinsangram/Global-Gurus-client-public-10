@@ -1,5 +1,7 @@
 import { useLoaderData } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 import Banner from "../../component/Banner";
+import CountryCard from "../../component/CountryCard";
 import TouristsSport from "./TouristsSport";
 
 const Home = () => {
@@ -8,10 +10,36 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <div className="grid grid-cols-3 mt-10 gap-10">
-        {sports.slice(0, 6).map((sport) => (
-          <TouristsSport key={sport._id} sport={sport}></TouristsSport>
-        ))}
+      <div>
+        <span className="text-center">
+          <p className="text-3xl font-bold text-cyan-600 mb-4 ">
+            Welcome to
+            <span className="text-rose-400">
+              <Typewriter
+                words={["Tourists Spots"]}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
+          </p>
+          <p className="text-xl  text-cyan-600">
+            These spots possess distinctive characteristics or features that
+            make them notable, <br />
+            appealing, and worthy of visitation
+          </p>
+        </span>
+
+        <div className="grid grid-cols-4 mt-10 gap-10">
+          {sports.slice(0, 8).map((sport) => (
+            <TouristsSport key={sport._id} sport={sport}></TouristsSport>
+          ))}
+        </div>
+        <div></div>
+        <CountryCard />
       </div>
     </div>
   );

@@ -7,10 +7,10 @@ import img from "../../../public/gradient-abstract-wireframe-background_23-21490
 import img1 from "../../../public/login112.avif";
 import { AuthContext } from "../../Provider/AuthProvider";
 const Login = () => {
-  const { signIn, googleSignIn } = useContext(AuthContext);
+  const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   const {
     register,
     handleSubmit,
@@ -27,7 +27,8 @@ const Login = () => {
           title: "Login Successful!",
           text: "You have successfully Login.",
         });
-        console.log(result.user);
+        reset();
+        // console.log(result.user);
         navigate(location.state ? location.state : "/");
       })
       .catch((err) => {
@@ -36,6 +37,7 @@ const Login = () => {
           title: "Login Failed",
           text: err.message,
         });
+
         console.log(err.message);
       });
   };
@@ -48,6 +50,26 @@ const Login = () => {
           text: "You have successfully google login.",
         });
         console.log(result.user);
+        navigate(location.state ? location.state : "/");
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: err.message,
+        });
+        console.log(err.message);
+      });
+  };
+  const handleGithubSignIn = () => {
+    githubSignIn()
+      .then((result) => {
+        const user = result.user;
+        Swal.fire({
+          icon: "success",
+          title: "Google Login Successful!",
+          text: "You have successfully google login.",
+        });
         navigate(location.state ? location.state : "/");
       })
       .catch((err) => {
@@ -89,7 +111,11 @@ const Login = () => {
                 <button type="button" className="btn rounded-full">
                   F
                 </button>
-                <button type="button" className="btn rounded-full">
+                <button
+                  onClick={handleGithubSignIn}
+                  type="button"
+                  className="btn rounded-full"
+                >
                   G
                 </button>
               </div>

@@ -124,7 +124,18 @@ const Register = () => {
                   Password
                 </label>
                 <input
-                  {...register("password", { required: true, minLength: 6 })}
+                  {...register("password", {
+                    required: "password is required",
+                    minLength: {
+                      value: 6,
+                      message: "your password must be at least 6 characters",
+                    },
+                    pattern: {
+                      value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
+                      message:
+                        "Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long",
+                    },
+                  })}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
                   type="password"
                   id="password"
@@ -132,11 +143,9 @@ const Register = () => {
                   required
                 />
                 {errors.password && (
-                  <span className="text-red-600 text-sm">
-                    {errors.password.type === "minLength"
-                      ? "Password must be at least 6 characters long"
-                      : "This field is required"}
-                  </span>
+                  <p role="alert" className="text-red-500">
+                    {errors.password.message}
+                  </p>
                 )}
               </div>
               <p className="text-xs  sm:px-6 ">
@@ -160,3 +169,12 @@ const Register = () => {
 };
 
 export default Register;
+{
+  /* {errors.password && (
+                  <span className="text-red-600 text-sm">
+                    {errors.password.type === "minLength"
+                      ? "Password must be at least 6 characters long"
+                      : "This field is required"}
+                  </span>
+                )} */
+}
