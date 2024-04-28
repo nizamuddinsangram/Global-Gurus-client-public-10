@@ -1,6 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 import { AuthContext } from "../Provider/AuthProvider";
+
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
   useEffect(() => {
@@ -157,7 +160,12 @@ const Navbar = () => {
                 title={user?.displayName}
                 className="w-10 mx-2 h-10 rounded-full object-cover"
               />
-              <button className="btn btn-sm text-xl" onClick={handleLogOut}>
+              <button
+                data-tooltip-id="logout-tooltip"
+                data-tooltip-content="Log Out"
+                className="btn btn-sm text-xl"
+                onClick={handleLogOut}
+              >
                 logOut
               </button>
             </>
@@ -173,6 +181,8 @@ const Navbar = () => {
           />
         </div>
       </div>
+      <ReactTooltip id="logout-tooltip" place="bottom" effect="solid" />{" "}
+      {/* Tooltip Component */}
     </>
   );
 };

@@ -10,9 +10,7 @@ const CountryAllPlaces = () => {
     );
   }
   return (
-    <div className="w-4/5  mx-auto my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {" "}
-      {/* Responsive grid */}
+    <div className="w-4/5  my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto justify-center items-center ">
       {loaderData?.map((country) => (
         <div
           key={country?._id}
@@ -41,7 +39,7 @@ const CountryAllPlaces = () => {
             <div className="mt-4">
               <Link
                 to={`/details/${country._id}`}
-                className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200 ease-in-out"
+                className="bg-cyan-500 font-bold text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200 ease-in-out"
               >
                 View Details
               </Link>

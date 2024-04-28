@@ -54,13 +54,21 @@ const router = createBrowserRouter([
       },
       {
         path: "update/:id",
-        element: <MyListUpdate />,
+        element: (
+          <PrivateRoute>
+            <MyListUpdate />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:7000/singleList/${params.id}`),
       },
       {
         path: "details/:id",
-        element: <Details />,
+        element: (
+          <PrivateRoute>
+            <Details />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:7000/singleList/${params.id}`),
         // loader: ({ params }) =>

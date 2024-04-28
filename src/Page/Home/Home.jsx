@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import Banner from "../../component/Banner";
 import CountryCard from "../../component/CountryCard";
+import Recommended from "../../component/Recommended";
 import TouristsSport from "./TouristsSport";
 
 const Home = () => {
@@ -38,6 +39,8 @@ const Home = () => {
             <TouristsSport key={sport._id} sport={sport}></TouristsSport>
           ))}
         </div>
+
+        <Recommended />
 
         <CountryCard />
       </div>
