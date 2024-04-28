@@ -38,7 +38,7 @@ const Home = () => {
             <TouristsSport key={sport._id} sport={sport}></TouristsSport>
           ))}
         </div>
-        <div></div>
+
         <CountryCard />
       </div>
     </div>

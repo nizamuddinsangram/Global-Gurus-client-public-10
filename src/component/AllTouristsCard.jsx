@@ -15,14 +15,14 @@ const AllTouristsCard = ({ data }) => {
       <img
         src={image} // Source for the image
         alt={`Image of ${tourist_spot_name}`}
-        className="w-full h-80 object-cover"
+        className="w-full h-60 object-cover"
       />
 
       {/* Content Section */}
       <div className="p-4">
         {/* Tourist Spot Name */}
         <h3 className="text-xl font-bold text-gray-800 mb-2">
-          {tourist_spot_name}
+          Place: {tourist_spot_name}
         </h3>
 
         {/* Tourist Spot Info */}

@@ -23,7 +23,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="navbar   bg-opacity-50 bg-base-100">
+      <div className="navbar   bg-opacity-50 bg-gray-100">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -88,7 +88,9 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Global Gurus</a>
+          <a className="text-teal-700 font-black text-xl">
+            Global <span className="text-rose-700">Gurus</span>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -96,7 +98,9 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "text-blue-600 font-semibold underline" : ""
+                  isActive
+                    ? "text-rose-500 text-lg font-bold  underline"
+                    : "text-teal-700 font-bold text-lg"
                 }
               >
                 HOME
@@ -106,7 +110,9 @@ const Navbar = () => {
               <NavLink
                 to="/allTourists"
                 className={({ isActive }) =>
-                  isActive ? "text-blue-600 font-semibold underline" : ""
+                  isActive
+                    ? "text-rose-500 text-lg font-bold underline"
+                    : "text-teal-700 font-bold text-lg"
                 }
               >
                 ALL TOURIST
@@ -117,10 +123,12 @@ const Navbar = () => {
                 <NavLink
                   to="/addTourist"
                   className={({ isActive }) =>
-                    isActive ? "text-blue-600 font-semibold underline" : ""
+                    isActive
+                      ? "text-rose-500 text-lg font-bold bg-blue-100 rounded p-1"
+                      : "text-teal-700 font-bold text-lg"
                   }
                 >
-                  AddTourist
+                  ADD TOURIST
                 </NavLink>
               </li>
             )}
@@ -129,7 +137,9 @@ const Navbar = () => {
                 <NavLink
                   to="/myList"
                   className={({ isActive }) =>
-                    isActive ? "text-blue-600 font-semibold underline" : ""
+                    isActive
+                      ? "text-rose-500 text-lg font-bold underline"
+                      : "text-teal-700 font-bold text-lg"
                   }
                 >
                   MY LIST
@@ -145,21 +155,21 @@ const Navbar = () => {
                 src={user?.photoURL}
                 alt="img"
                 title={user?.displayName}
-                className="w-10 h-10 rounded-full object-cover"
+                className="w-10 mx-2 h-10 rounded-full object-cover"
               />
-              <button className="btn btn-sm" onClick={handleLogOut}>
+              <button className="btn btn-sm text-xl" onClick={handleLogOut}>
                 logOut
               </button>
             </>
           ) : (
-            <Link to="/login" className="btn btn-sm">
+            <Link to="/login" className="btn text-xl text-green-700 btn-sm">
               Login
             </Link>
           )}
           <input
             onChange={handleToggle}
             type="checkbox"
-            className="toggle theme-controller"
+            className="toggle mx-3 theme-controller"
           />
         </div>
       </div>

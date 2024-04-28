@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import bannerImg from "../../assets/img6.jpg";
 import { useLoaderData } from "react-router-dom";
 import AllTouristsCard from "../../component/AllTouristsCard";
 const AllTouristsPage = () => {
   const data = useLoaderData();
   const [loadedData, setLoadedData] = useState(data);
 
-  console.log(loadedData);
   const handleSort = () => {
     fetch("http://localhost:7000/search")
       .then((res) => res.json())
@@ -16,10 +17,31 @@ const AllTouristsPage = () => {
 
   return (
     <div>
-      <button>
+      <section
+        className="relative flex items-center justify-center h-96 w-full"
+        style={{
+          backgroundImage: `url(${bannerImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="bg-black bg-opacity-50 p-6 rounded-lg text-center text-white">
+          <h1 className="text-4xl font-bold">Discover All Products</h1>
+          <p className="mt-4 text-lg">
+            Explore our wide range of products, from electronics to home goods.
+          </p>
+          <Link to="/products">
+            <button className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all duration-300 ease-in-out">
+              View Products
+            </button>
+          </Link>
+        </div>
+      </section>
+      <button className="mt-10 text-center flex">
         sort <span onClick={handleSort}>Ascending</span>
       </button>
-      <div className="grid grid-cols-3 gap-10 mt-14">
+      <div className="grid grid-cols-3 gap-10 ">
         {loadedData.map((data) => (
           <AllTouristsCard key={data._id} data={data}></AllTouristsCard>
         ))}
