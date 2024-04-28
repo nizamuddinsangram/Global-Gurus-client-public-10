@@ -41,7 +41,7 @@ const AllTouristsPage = () => {
       <button className="mt-20 text-center flex">
         sort <span onClick={handleSort}>Ascending</span>
       </button>
-      <div className="grid grid-cols-3 gap-10 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
         {loadedData.map((data) => (
           <AllTouristsCard key={data._id} data={data}></AllTouristsCard>
         ))}
