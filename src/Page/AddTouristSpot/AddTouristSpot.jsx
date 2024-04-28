@@ -40,7 +40,7 @@ const AddTouristSpot = () => {
       .then((data) => console.log(data));
   };
   return (
-    <div className="w-4/5 mx-auto  bg-white p-6 rounded-lg shadow-md">
+    <div className="w-4/5 mx-auto my-14 bg-white p-6 rounded-lg shadow-md">
       <form onSubmit={handleAddTourist} className="flex flex-col space-y-4">
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
           Add Tourist Spot
@@ -243,7 +243,7 @@ const AddTouristSpot = () => {
 
         <button
           type="submit"
-          className="w-full py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition duration-150 ease-in-out"
+          className="w-full py-2 bg-sky-400 text-white font-medium rounded hover:bg-blue-700 transition duration-150 ease-in-out"
         >
           Add Tourist Spot
         </button>
@@ -253,34 +253,3 @@ const AddTouristSpot = () => {
 };
 
 export default AddTouristSpot;
-
-// const AddTouristSpot = () => {
-//   const handleAdd = (e) => {
-//     e.preventDefault();
-//     const name = e.target.name.value;
-//     console.log(name);
-//     const myName = { name };
-//     fetch("http://localhost:5000/user", {
-//       method: "POST",
-//       headers: { "Content-type": "application/json" },
-//       body: JSON.stringify(myName),
-//     })
-//       .then((res) => res.json())
-//       .then((data) => console.log(data));
-//   };
-//   return (
-//     <div>
-//       <form onSubmit={handleAdd}>
-//         <input
-//           type="text"
-//           name="name"
-//           placeholder="name"
-//           className="input input-bordered w-full"
-//         />
-//         <input type="submit" value="Add Coffee" className="btn btn-block" />
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default AddTouristSpot;
