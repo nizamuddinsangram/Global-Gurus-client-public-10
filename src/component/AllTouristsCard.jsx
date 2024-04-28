@@ -21,60 +21,42 @@ const AllTouristsCard = ({ data }) => {
       {/* Content Section */}
       <div className="p-4">
         {/* Tourist Spot Name */}
-        <h3 className="text-xl font-bold text-gray-800 mb-2">
+        <h3 className="text-xl font-bold text-lime-500 mb-2">
           Place: {tourist_spot_name}
         </h3>
 
         {/* Tourist Spot Info */}
-        <div className="text-gray-600 mb-4">
-          <p>
-            <strong>Average Cost:</strong> {average_cost}
-          </p>
-          <p>
-            <strong>Total Visitors per Year:</strong> {totalVisitorsPerYear}
-          </p>
-          <p>
-            <strong>Travel Time:</strong> {travel_time}
-          </p>
-          <p>
-            <strong>Seasonality:</strong> {seasonality}
-          </p>
+        <div className="text-lime-700 mb-4 text-base ">
+          <div className="flex justify-between mb-4">
+            <p>
+              <strong>Average Cost:</strong> {average_cost}
+            </p>
+            <p>
+              <strong>Total Visitors per Year:</strong> {totalVisitorsPerYear}
+            </p>
+          </div>
+          <div className="flex justify-between">
+            <p>
+              <strong>Travel Time:</strong> {travel_time}
+            </p>
+            <p>
+              <strong>Seasonality:</strong> {seasonality}
+            </p>
+          </div>
         </div>
 
         {/* View Details Button */}
-        <Link
-          to={`/details/${_id}`} // Dynamic link to the details page
-          className="text-white bg-blue-500 hover:bg-blue-600 font-semibold py-2 px-4 rounded transition duration-200 ease-in-out"
-        >
-          View Details
-        </Link>
+        <div className="flex justify-center w-full ">
+          <Link
+            to={`/details/${_id}`} // Dynamic link to the details page
+            class="text-gray-900 w-full text-center bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+          >
+            View Details
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
 export default AllTouristsCard;
-
-// <div className="card w-11/12 mt-6 mb-6 mx-auto bg-base-100 shadow-xl">
-//   <figure>
-//     <img src={image} alt="Shoes" className="h-96	 w-full" />
-//   </figure>
-//   <div className="card-body">
-//     <h2 className="card-title">{tourist_spot_name}</h2>
-//     <p>{average_cost}</p>
-//     <div className="flex justify-between  items-center">
-//       <p className="">
-//         Status:{" "}
-//         <span className="bg-rose-300  px-2 rounded-lg">
-//           {totalVisitorsPerYear}
-//         </span>
-//       </p>
-//       <p>{travel_time}</p>
-//     </div>
-//     <div className="card-actions ">
-//       <Link to={`/details/${_id}`} className="btn btn-accent text-white">
-//         View Details
-//       </Link>
-//     </div>
-//   </div>
-// </div>

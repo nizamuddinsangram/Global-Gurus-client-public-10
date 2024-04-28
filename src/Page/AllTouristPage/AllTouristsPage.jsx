@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import bannerImg from "../../assets/img6.jpg";
 import { useLoaderData } from "react-router-dom";
 import AllTouristsCard from "../../component/AllTouristsCard";
+import AllTouristSlider from "./AllTouristSlider";
 const AllTouristsPage = () => {
   const data = useLoaderData();
   const [loadedData, setLoadedData] = useState(data);
@@ -17,7 +16,7 @@ const AllTouristsPage = () => {
 
   return (
     <div>
-      <section
+      {/* <section
         className="relative flex items-center justify-center h-96 w-full"
         style={{
           backgroundImage: `url(${bannerImg})`,
@@ -37,8 +36,9 @@ const AllTouristsPage = () => {
             </button>
           </Link>
         </div>
-      </section>
-      <button className="mt-10 text-center flex">
+      </section> */}
+      <AllTouristSlider />
+      <button className="mt-20 text-center flex">
         sort <span onClick={handleSort}>Ascending</span>
       </button>
       <div className="grid grid-cols-3 gap-10 ">
