@@ -7,7 +7,7 @@ const AllTouristsPage = () => {
   const [loadedData, setLoadedData] = useState(data);
 
   const handleSort = () => {
-    fetch("http://localhost:7000/search")
+    fetch("https://southeast-asia-server-kappa.vercel.app/search")
       .then((res) => res.json())
       .then((data) => {
         setLoadedData(data);
@@ -16,30 +16,12 @@ const AllTouristsPage = () => {
 
   return (
     <div>
-      {/* <section
-        className="relative flex items-center justify-center h-96 w-full"
-        style={{
-          backgroundImage: `url(${bannerImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="bg-black bg-opacity-50 p-6 rounded-lg text-center text-white">
-          <h1 className="text-4xl font-bold">Discover All Products</h1>
-          <p className="mt-4 text-lg">
-            Explore our wide range of products, from electronics to home goods.
-          </p>
-          <Link to="/products">
-            <button className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all duration-300 ease-in-out">
-              View Products
-            </button>
-          </Link>
-        </div>
-      </section> */}
       <AllTouristSlider />
-      <button className="mt-20 text-center flex">
-        sort <span onClick={handleSort}>Ascending</span>
+      <button className="mt-20 text-center mb-4 text-xl ml-6">
+        sort{" "}
+        <span className="bg-rose-400 px-2 p-1 rounded-lg" onClick={handleSort}>
+          Ascending
+        </span>
       </button>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
         {loadedData.map((data) => (

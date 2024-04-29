@@ -21,7 +21,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:7000/myPlaces"),
+        loader: () =>
+          fetch("https://southeast-asia-server-kappa.vercel.app/myPlaces"),
       },
       {
         path: "/login",
@@ -42,7 +43,8 @@ const router = createBrowserRouter([
       {
         path: "/allTourists",
         element: <AllTouristsPage />,
-        loader: () => fetch("http://localhost:7000/myPlaces"),
+        loader: () =>
+          fetch("https://southeast-asia-server-kappa.vercel.app/myPlaces"),
       },
       {
         path: "/myList",
@@ -60,7 +62,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:7000/singleList/${params.id}`),
+          fetch(
+            `https://southeast-asia-server-kappa.vercel.app/singleList/${params.id}`
+          ),
       },
       {
         path: "details/:id",
@@ -70,15 +74,19 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:7000/singleList/${params.id}`),
+          fetch(
+            `https://southeast-asia-server-kappa.vercel.app/singleList/${params.id}`
+          ),
         // loader: ({ params }) =>
-        //   fetch(`http://localhost:7000/details/${params.id}`),
+        //   fetch(`https://southeast-asia-server-kappa.vercel.app/details/${params.id}`),
       },
       {
         path: "country/:countryName",
         element: <CountryAllPlaces />,
         loader: ({ params }) =>
-          fetch(`http://localhost:7000/allCountry/${params.countryName}`),
+          fetch(
+            `https://southeast-asia-server-kappa.vercel.app/allCountry/${params.countryName}`
+          ),
       },
     ],
   },

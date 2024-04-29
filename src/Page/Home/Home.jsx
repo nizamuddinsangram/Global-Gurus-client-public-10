@@ -8,6 +8,10 @@ import TouristsSport from "./TouristsSport";
 
 const Home = () => {
   const sports = useLoaderData();
+  console.log("sport", sports);
+  // if (!Array.isArray(sports)) {
+  //   return <p>Loading data...</p>;
+  // }
 
   return (
     <div>
@@ -36,7 +40,7 @@ const Home = () => {
         </span>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 gap-10 ">
-          {sports.slice(0, 8).map((sport) => (
+          {sports?.slice(0, 8).map((sport) => (
             <TouristsSport key={sport._id} sport={sport}></TouristsSport>
           ))}
         </div>

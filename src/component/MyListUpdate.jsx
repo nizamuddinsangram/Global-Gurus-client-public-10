@@ -1,4 +1,6 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+
 const MyListUpdate = () => {
   const updateData = useLoaderData();
   const {
@@ -38,13 +40,22 @@ const MyListUpdate = () => {
       totalVisitorsPerYear,
     };
     console.log(places);
-    fetch(`http://localhost:7000/myPlaces/${_id}`, {
+    fetch(`https://southeast-asia-server-kappa.vercel.app/myPlaces/${_id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(places),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          Swal.fire({
+            title: "Good job!",
+            text: "Updated Places successfully !",
+            icon: "success",
+          });
+        }
+      });
   };
 
   return (

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CountryCard = () => {
   const [country, setCountry] = useState();
   useEffect(() => {
-    fetch("http://localhost:7000/country")
+    fetch("https://southeast-asia-server-kappa.vercel.app/country")
       .then((res) => res.json())
       .then((data) => {
         setCountry(data);

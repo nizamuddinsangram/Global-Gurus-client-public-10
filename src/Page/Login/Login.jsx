@@ -1,3 +1,6 @@
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaSquareFacebook } from "react-icons/fa6";
+
 import { useContext } from "react";
 import Swal from "sweetalert2";
 
@@ -106,17 +109,17 @@ const Login = () => {
                   type="button"
                   className="btn rounded-full"
                 >
-                  G
+                  <FaGoogle />
                 </button>
-                <button type="button" className="btn rounded-full">
-                  F
+                <button type="button" className="btn rounded-full mx-8">
+                  <FaSquareFacebook />
                 </button>
                 <button
                   onClick={handleGithubSignIn}
                   type="button"
                   className="btn rounded-full"
                 >
-                  G
+                  <FaGithub />
                 </button>
               </div>
               {/* <hr className="my-4" d={true} /> */}

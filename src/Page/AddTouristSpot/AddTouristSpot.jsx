@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 const AddTouristSpot = () => {
   const { user } = useContext(AuthContext);
@@ -31,13 +32,22 @@ const AddTouristSpot = () => {
       user_name,
     };
     console.log(places);
-    fetch("http://localhost:7000/myPlaces", {
+    fetch("https://southeast-asia-server-kappa.vercel.app/myPlaces", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(places),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Good job!",
+            text: "Added Places successfully !",
+            icon: "success",
+          });
+          form.reset();
+        }
+      });
   };
   return (
     <div className="w-4/5 mx-auto my-14 bg-white p-6 rounded-lg shadow-md">
@@ -47,7 +57,7 @@ const AddTouristSpot = () => {
         </h2>
 
         {/* Two fields in one row */}
-        <div className="flex flex-row space-x-4">
+        <div className="flex flex-col lg:flex-row space-x-4">
           <div className="flex-1">
             <label
               htmlFor="tourist_spot_name"
@@ -127,7 +137,7 @@ const AddTouristSpot = () => {
         </div>
 
         {/* Another pair of fields in one row */}
-        <div className="flex flex-row space-x-4">
+        <div className="flex flex-col lg:flex-row space-x-4">
           <div className="flex-1">
             <label
               htmlFor="average_cost"
@@ -164,7 +174,7 @@ const AddTouristSpot = () => {
         </div>
 
         {/*  */}
-        <div className="flex flex-row space-x-4">
+        <div className="flex flex-col lg:flex-row space-x-4">
           <div className="flex-1">
             <label
               htmlFor="travel_time"
@@ -202,7 +212,7 @@ const AddTouristSpot = () => {
 
         {/*  */}
 
-        <div className="flex flex-row space-x-4">
+        <div className="flex flex-col lg:flex-row space-x-4">
           <div className="flex-1">
             <label
               htmlFor="user_email"
