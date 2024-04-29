@@ -60,7 +60,7 @@ const MyListUpdate = () => {
 
   return (
     <>
-      <div className="w-4/5 my-20 mx-auto bg-white p-6 rounded-lg shadow-md">
+      <div className=" w-full lg:w-4/5 mt-4 lg:my-20 mx-auto bg-white p-6 rounded-lg shadow-md">
         <form onSubmit={handleUpdate} className="flex flex-col space-y-4">
           <h2 className="text-2xl text-center font-semibold text-gray-700 mb-4">
             Update Tourist Spot
@@ -176,7 +176,7 @@ const MyListUpdate = () => {
                 htmlFor="seasonality"
                 className="block text-gray-600 font-medium"
               >
-                Seasonality (e.g., summer, winter):
+                Seasonality
               </label>
               <input
                 type="text"

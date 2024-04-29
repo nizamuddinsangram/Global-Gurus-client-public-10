@@ -56,14 +56,14 @@ const AddTouristSpot = () => {
       <Helmet>
         <title>Global Gurus Add Tourist</title>
       </Helmet>
-      <div className="w-4/5 mx-auto my-14 bg-white p-6 rounded-lg shadow-md">
+      <div className=" w-full lg:w-4/5 mx-auto mt-2 lg:my-14 bg-white p-6 rounded-lg shadow-md">
         <form onSubmit={handleAddTourist} className="flex flex-col space-y-4">
           <h2 className="text-2xl font-semibold text-gray-700 mb-4">
             Add Tourist Spot
           </h2>
 
           {/* Two fields in one row */}
-          <div className="flex flex-col lg:flex-row space-x-4">
+          <div className="flex flex-col lg:flex-row lg:space-x-4">
             <div className="flex-1">
               <label
                 htmlFor="tourist_spot_name"
@@ -143,7 +143,7 @@ const AddTouristSpot = () => {
           </div>
 
           {/* Another pair of fields in one row */}
-          <div className="flex flex-col lg:flex-row space-x-4">
+          <div className="flex flex-col lg:flex-row lg:space-x-4">
             <div className="flex-1">
               <label
                 htmlFor="average_cost"
@@ -180,7 +180,7 @@ const AddTouristSpot = () => {
           </div>
 
           {/*  */}
-          <div className="flex flex-col lg:flex-row space-x-4">
+          <div className="flex flex-col lg:flex-row lg:space-x-4">
             <div className="flex-1">
               <label
                 htmlFor="travel_time"
@@ -218,7 +218,7 @@ const AddTouristSpot = () => {
 
           {/*  */}
 
-          <div className="flex flex-col lg:flex-row space-x-4">
+          <div className="flex flex-col lg:flex-row lg:space-x-4">
             <div className="flex-1">
               <label
                 htmlFor="user_email"

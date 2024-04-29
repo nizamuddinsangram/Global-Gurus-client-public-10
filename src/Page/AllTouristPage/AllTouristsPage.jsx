@@ -21,8 +21,10 @@ const AllTouristsPage = () => {
       <Helmet>
         <title>Global Gurus Tourist Page</title>
       </Helmet>
-      <AllTouristSlider className="sm:h-[50vh]" />
-      <button className="mt-20 text-center mb-4 text-xl ml-6">
+
+      <AllTouristSlider />
+
+      <button className=" mt-4 lg:mt-20 text-center mb-4 text-xl ml-6">
         sort{" "}
         <span className="bg-rose-400 px-2 p-1 rounded-lg" onClick={handleSort}>
           Ascending

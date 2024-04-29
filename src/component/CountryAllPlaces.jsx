@@ -29,9 +29,6 @@ const CountryAllPlaces = () => {
               <p className="">Country: {country.country_Name}</p>{" "}
               <p className="">Location: {country.location}</p>{" "}
             </span>
-            {/* <p className="mt-2 text-gray-700 font-black mb-2">
-              {country.short_description}
-            </p>{" "} */}
             <span className="flex text-cyan-800 justify-between items-center font-bold">
               <p className=" ">Average Cost: {country.average_cost}</p>
               <p className="">Seasonality: {country.seasonality}</p>{" "}

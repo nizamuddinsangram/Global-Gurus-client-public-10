@@ -20,7 +20,7 @@ const MyListTable = ({ place, handleDelete }) => {
         <td>
           <Link
             to={`/update/${place?._id}`}
-            className="font-bold text-lg hover:underline  text-green-600"
+            className="font-bold lg:text-lg hover:underline  text-green-600"
           >
             UPDATE
           </Link>
@@ -28,9 +28,9 @@ const MyListTable = ({ place, handleDelete }) => {
         <th>
           <button
             onClick={() => handleDelete(place?._id)}
-            className=" text-rose-500 btn-xs text-lg hover:underline"
+            className=" text-rose-500 font-bold lg:text-lg hover:underline"
           >
-            Delete
+            DELETE
           </button>
         </th>
       </tr>
