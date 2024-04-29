@@ -7,6 +7,7 @@ const Footer = () => {
         </a>
         <p className="text-green-950 text-lg">
           Copyright © 2024 - All right reserved
+          <strong className="font-black text-teal-800 italic"> Sangram</strong>
         </p>
       </aside>
       <nav>
