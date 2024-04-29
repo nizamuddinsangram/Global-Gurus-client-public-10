@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { FaSquareFacebook } from "react-icons/fa6";
 
@@ -85,95 +86,100 @@ const Login = () => {
       });
   };
   return (
-    <div
-      className="flex h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${img})` }}
-    >
-      <div className="flex w-11/12 h-full items-center justify-center mx-auto rounded-lg">
-        {/* Left side with an image */}
-        <div className=" flex h-5/6 w-2/5	 items-center justify-center bg-opacity-0">
-          <img src={img1} alt="Login" className="w-full h-full opacity-70" />
-        </div>
+    <>
+      <Helmet>
+        <title>Global Gurus Login</title>
+      </Helmet>
+      <div
+        className="flex h-screen bg-cover bg-center"
+        style={{ backgroundImage: `url(${img})` }}
+      >
+        <div className="flex w-11/12 h-full items-center justify-center mx-auto rounded-lg">
+          {/* Left side with an image */}
+          <div className=" flex h-5/6 w-2/5	 items-center justify-center bg-opacity-0">
+            <img src={img1} alt="Login" className="w-full h-full opacity-70" />
+          </div>
 
-        {/* Right side with input fields */}
-        <div className=" flex  h-5/6 w-3/5	 items-center justify-center bg-white bg-opacity-50 p-8">
-          <div className="w-full max-w-md">
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Hello Friend
-            </h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              {/* icon */}
-              <div className="flex justify-center items-center  ">
-                <button
-                  onClick={handleGoogleSignIn}
-                  type="button"
-                  className="btn rounded-full"
-                >
-                  <FaGoogle />
-                </button>
-                <button type="button" className="btn rounded-full mx-8">
-                  <FaSquareFacebook />
-                </button>
-                <button
-                  onClick={handleGithubSignIn}
-                  type="button"
-                  className="btn rounded-full"
-                >
-                  <FaGithub />
-                </button>
-              </div>
-              {/* <hr className="my-4" d={true} /> */}
-              {/* icon */}
+          {/* Right side with input fields */}
+          <div className=" flex  h-5/6 w-3/5	 items-center justify-center bg-white bg-opacity-50 p-8">
+            <div className="w-full max-w-md">
+              <h2 className="text-2xl font-bold mb-6 text-center">
+                Hello Friend
+              </h2>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                {/* icon */}
+                <div className="flex justify-center items-center  ">
+                  <button
+                    onClick={handleGoogleSignIn}
+                    type="button"
+                    className="btn rounded-full"
+                  >
+                    <FaGoogle />
+                  </button>
+                  <button type="button" className="btn rounded-full mx-8">
+                    <FaSquareFacebook />
+                  </button>
+                  <button
+                    onClick={handleGithubSignIn}
+                    type="button"
+                    className="btn rounded-full"
+                  >
+                    <FaGithub />
+                  </button>
+                </div>
+                {/* <hr className="my-4" d={true} /> */}
+                {/* icon */}
 
-              <div className="mb-4">
-                <label
-                  className="block text-sm font-medium text-gray-700"
-                  htmlFor="email"
+                <div className="mb-4">
+                  <label
+                    className="block text-sm font-medium text-gray-700"
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
+                  <input
+                    {...register("email")}
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div className="mb-6">
+                  <label
+                    className="block text-sm font-medium text-gray-700"
+                    htmlFor="password"
+                  >
+                    Password
+                  </label>
+                  <input
+                    {...register("password")}
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                  />
+                </div>
+                <p className="text-xs  mb-2 font-black text-gray-401">
+                  Dont have an account?{" "}
+                  <Link to="/register" className="underline ">
+                    Register
+                  </Link>
+                </p>
+                <button
+                  className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
+                  type="submit"
                 >
-                  Email
-                </label>
-                <input
-                  {...register("email")}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                />
-              </div>
-              <div className="mb-6">
-                <label
-                  className="block text-sm font-medium text-gray-700"
-                  htmlFor="password"
-                >
-                  Password
-                </label>
-                <input
-                  {...register("password")}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
-                  type="password"
-                  id="password"
-                  name="password"
-                  required
-                />
-              </div>
-              <p className="text-xs  sm:px-6 ">
-                Dont have an account?{" "}
-                <Link to="/register" className="underline text-gray-100">
-                  Register
-                </Link>
-              </p>
-              <button
-                className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
-                type="submit"
-              >
-                Sign Up
-              </button>
-            </form>
+                  Sign Up
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

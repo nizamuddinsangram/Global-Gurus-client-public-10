@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyListTable from "../../component/MyListTable";
@@ -48,6 +49,9 @@ const MyListPage = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>Global Gurus List Page</title>
+      </Helmet>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

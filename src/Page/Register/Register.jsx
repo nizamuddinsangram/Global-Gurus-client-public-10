@@ -1,4 +1,6 @@
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
+
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -48,123 +50,128 @@ const Register = () => {
   };
 
   return (
-    <div
-      className="flex h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${img})` }}
-    >
-      <div className="flex w-11/12 h-full items-center justify-center mx-auto">
-        {/* Left side with an image */}
-        <div className=" flex h-5/6 w-2/5	 items-center justify-center bg-opacity-0">
-          <img src={img1} alt="Login" className="w-full h-full opacity-70" />
-        </div>
+    <>
+      <Helmet>
+        <title>Global Gurus Register</title>
+      </Helmet>
+      <div
+        className="flex h-screen bg-cover bg-center"
+        style={{ backgroundImage: `url(${img})` }}
+      >
+        <div className="flex w-11/12 h-full items-center justify-center mx-auto">
+          {/* Left side with an image */}
+          <div className=" flex h-5/6 w-2/5	 items-center justify-center bg-opacity-0">
+            <img src={img1} alt="Login" className="w-full h-full opacity-70" />
+          </div>
 
-        {/* Right side with input fields */}
-        <div className=" flex  h-5/6 w-3/5	 items-center justify-center bg-white bg-opacity-50 p-8">
-          <div className="w-full max-w-md">
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Hello Friend
-            </h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="mb-4">
-                <label
-                  className="block text-sm font-medium text-gray-700"
-                  htmlFor="name"
+          {/* Right side with input fields */}
+          <div className=" flex  h-5/6 w-3/5	 items-center justify-center bg-white bg-opacity-50 p-8">
+            <div className="w-full max-w-md">
+              <h2 className="text-2xl font-bold mb-6 text-center">
+                Hello Friend
+              </h2>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="mb-4">
+                  <label
+                    className="block text-sm font-medium text-gray-700"
+                    htmlFor="name"
+                  >
+                    Name
+                  </label>
+                  <input
+                    {...register("name", { required: true })}
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                  />
+                  {errors.name && <span>This field is required</span>}
+                </div>
+                <div className="mb-6">
+                  <label
+                    className="block text-sm font-medium text-gray-700"
+                    htmlFor="PhotUrl"
+                  >
+                    PhotUrl
+                  </label>
+                  <input
+                    {...register("PhotUrl", { required: true })}
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                    type="text"
+                    id="PhotUrl"
+                    name="PhotUrl"
+                    required
+                  />
+                  {errors.PhotUrl && <span>This field is required</span>}
+                </div>
+                <div className="mb-4">
+                  <label
+                    className="block text-sm font-medium text-gray-700"
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
+                  <input
+                    {...register("email", { required: true })}
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                  {errors.email && <span>This field is required</span>}
+                </div>
+                <div className="mb-6">
+                  <label
+                    className="block text-sm font-medium text-gray-700"
+                    htmlFor="password"
+                  >
+                    Password
+                  </label>
+                  <input
+                    {...register("password", {
+                      required: "password is required",
+                      minLength: {
+                        value: 6,
+                        message: "your password must be at least 6 characters",
+                      },
+                      pattern: {
+                        value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
+                        message:
+                          "Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long",
+                      },
+                    })}
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                  />
+                  {errors.password && (
+                    <p role="alert" className="text-red-500">
+                      {errors.password.message}
+                    </p>
+                  )}
+                </div>
+                <p className="text-xs  font-black mb-3 ">
+                  Already have an account?{" "}
+                  <Link to="/login" className="underline text-gray-100">
+                    Login
+                  </Link>
+                </p>
+                <button
+                  className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
+                  type="submit"
                 >
-                  Name
-                </label>
-                <input
-                  {...register("name", { required: true })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                />
-                {errors.name && <span>This field is required</span>}
-              </div>
-              <div className="mb-6">
-                <label
-                  className="block text-sm font-medium text-gray-700"
-                  htmlFor="PhotUrl"
-                >
-                  PhotUrl
-                </label>
-                <input
-                  {...register("PhotUrl", { required: true })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
-                  type="text"
-                  id="PhotUrl"
-                  name="PhotUrl"
-                  required
-                />
-                {errors.PhotUrl && <span>This field is required</span>}
-              </div>
-              <div className="mb-4">
-                <label
-                  className="block text-sm font-medium text-gray-700"
-                  htmlFor="email"
-                >
-                  Email
-                </label>
-                <input
-                  {...register("email", { required: true })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                />
-                {errors.email && <span>This field is required</span>}
-              </div>
-              <div className="mb-6">
-                <label
-                  className="block text-sm font-medium text-gray-700"
-                  htmlFor="password"
-                >
-                  Password
-                </label>
-                <input
-                  {...register("password", {
-                    required: "password is required",
-                    minLength: {
-                      value: 6,
-                      message: "your password must be at least 6 characters",
-                    },
-                    pattern: {
-                      value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
-                      message:
-                        "Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long",
-                    },
-                  })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
-                  type="password"
-                  id="password"
-                  name="password"
-                  required
-                />
-                {errors.password && (
-                  <p role="alert" className="text-red-500">
-                    {errors.password.message}
-                  </p>
-                )}
-              </div>
-              <p className="text-xs  sm:px-6 ">
-                Already have an account?{" "}
-                <Link to="/login" className="underline text-gray-100">
-                  Login
-                </Link>
-              </p>
-              <button
-                className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
-                type="submit"
-              >
-                Sign Up
-              </button>
-            </form>
+                  Sign Up
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

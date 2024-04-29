@@ -1,8 +1,21 @@
-# React + Vite
+# Global Gurus
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Global Gurus!
 
-Currently, two official plugins are available:
+## Live Site URL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## link: https://assignment10-6b79b.web.app
+
+## Key Features
+
+- **User-Friendly Interface:** Designed with ease of use in mind, making navigation simple and intuitive.
+- **Responsive Design:** Optimized for various devices, ensuring a consistent experience on mobile, tablet, and desktop.
+- **Rich Content:** Offers a wide range of information, from [brief description of content topics].
+- **Interactive Elements:** Engages users with [examples of interactive elements like quizzes, forums, or tools].
+- **Accessibility:** Complies with web accessibility standards to ensure usability for everyone.
+
+## Get In Touch
+
+If you have any questions or feedback, feel free to [contact us/contact me] at [contact information].
+
+Thank you for visiting!

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import Banner from "../../component/Banner";
@@ -15,10 +16,13 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Global Gurus Home</title>
+      </Helmet>
       <Banner />
       <div>
         <span className="text-center">
-          <p className="text-3xl font-bold text-cyan-600 mb-4 ">
+          <p className="text-2xl lg:text-3xl font-bold text-cyan-600 mb-4 ">
             Welcome to
             <span className="text-rose-400">
               <Typewriter
@@ -32,7 +36,7 @@ const Home = () => {
               />
             </span>
           </p>
-          <p className="text-xl  text-cyan-600">
+          <p className="text-lg lg:text-xl  text-cyan-600">
             These spots possess distinctive characteristics or features that
             make them notable, <br />
             appealing, and worthy of visitation

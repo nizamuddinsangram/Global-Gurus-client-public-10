@@ -21,29 +21,29 @@ const Banner = () => {
           <img className="" src={img4} />
         </div>
       </Carousel> */}
-      <Carousel className="h-[85vh] w-full mb-20">
-        <div className="h-[80vh] relative">
+      <Carousel className="h-[45vh] lg:h-[85vh] w-full mb-20">
+        <div className="h-[40vh] lg:h-[80vh] relative">
           <img
             className="h-full w-full object-cover"
             src={img1}
             alt="Image 1"
           />
         </div>
-        <div className="h-[80vh] relative">
+        <div className="h-[40vh] lg:h-[80vh] relative">
           <img
             className="h-full w-full object-cover"
             src={img2}
             alt="Image 2"
           />
         </div>
-        <div className="h-[80vh] relative">
+        <div className="h-[40vh] lg:h-[80vh] relative">
           <img
             className="h-full w-full object-cover"
             src={img3}
             alt="Image 3"
           />
         </div>
-        <div className="h-[80vh] relative">
+        <div className="h-[40vh] lg:h-[80vh]] relative">
           <img
             className="h-full w-full object-cover"
             src={img4}

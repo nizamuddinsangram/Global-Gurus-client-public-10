@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import AllTouristsCard from "../../component/AllTouristsCard";
 import AllTouristSlider from "./AllTouristSlider";
+
 const AllTouristsPage = () => {
   const data = useLoaderData();
   const [loadedData, setLoadedData] = useState(data);
@@ -16,7 +18,10 @@ const AllTouristsPage = () => {
 
   return (
     <div>
-      <AllTouristSlider />
+      <Helmet>
+        <title>Global Gurus Tourist Page</title>
+      </Helmet>
+      <AllTouristSlider className="sm:h-[50vh]" />
       <button className="mt-20 text-center mb-4 text-xl ml-6">
         sort{" "}
         <span className="bg-rose-400 px-2 p-1 rounded-lg" onClick={handleSort}>
@@ -33,23 +38,3 @@ const AllTouristsPage = () => {
 };
 
 export default AllTouristsPage;
-// const [searchParams, setSearchParams] = useSearchParams();
-// const [sortOrder, setSortOrder] = useState(searchParams.get("sort") || "asc");
-// const [loadedDatas, setLoadedData] = useState([]);
-// //
-// useEffect(() => {
-//   const fetchPlaces = async () => {
-//     const response = await fetch(`/search?sort=${sortOrder}`);
-//     const data = await response.json();
-//     setLoadedData(data);
-//   };
-
-//   fetchPlaces();
-// }, [sortOrder]); // Re-fetch when sortOrder changes
-
-// const handleSortChange = (event) => {
-//   const selectedSort = event.target.value;
-//   setSortOrder(selectedSort); // Update sortOrder state
-//   setSearchParams({ sort: selectedSort }); // Update query parameter
-// };
-//
