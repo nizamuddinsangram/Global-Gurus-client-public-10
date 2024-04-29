@@ -37,7 +37,7 @@ const CountryCard = () => {
         </p>
       </div>
       <div className="flex justify-center mt-10 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 justify-center items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-20 justify-center items-center">
           {country?.map((item) => (
             <Link key={item._id} to={`/country/${item.country_Name}`}>
               <div className="max-w-sm h-96 mb-10 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">

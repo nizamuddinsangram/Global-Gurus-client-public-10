@@ -56,11 +56,11 @@ const MyListPage = () => {
         <table className="table">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="text-sm  lg:text-lG">
               <th>Place Name</th>
-              <th>Location</th>
-              <th>Action</th>
-              <th>Action</th>
+              <th className="lg:block hidden">Location</th>
+              <th>ACTION</th>
+              <th>ACTION</th>
             </tr>
           </thead>
           <tbody className="">

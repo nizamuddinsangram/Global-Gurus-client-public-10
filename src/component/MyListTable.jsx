@@ -16,7 +16,7 @@ const MyListTable = ({ place, handleDelete }) => {
             </div>
           </div>
         </td>
-        <td>{place?.location}</td>
+        <td className="hidden lg:block">{place?.location}</td>
         <td>
           <Link
             to={`/update/${place?._id}`}
