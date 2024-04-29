@@ -26,13 +26,13 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="navbar   bg-opacity-50 bg-gray-100">
+      <div className="navbar relative z-10   bg-opacity-50 bg-gray-100">
         <div className="navbar-start">
           <div className="dropdown">
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost lg:hidden z-10"
+              className="btn btn-ghost lg:hidden z-20"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ const Navbar = () => {
                     isActive ? "text-blue-600 font-semibold underline" : ""
                   }
                 >
-                  AddTourist
+                  ADD TOURIST
                 </NavLink>
               </li>
               <li>
@@ -95,7 +95,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="text-teal-700 font-black text-xl">
+          <a className="text-teal-700  font-black text-xl">
             Global <span className="text-rose-700">Gurus</span>
           </a>
         </div>
@@ -162,7 +162,7 @@ const Navbar = () => {
                 src={user?.photoURL}
                 alt="img"
                 title={user?.displayName}
-                className="w-10 mx-2 h-10 rounded-full object-cover"
+                className="w-10 mx-2 hidden lg:block h-10 rounded-full object-cover"
               />
               <button
                 data-tooltip-id="logout-tooltip"

@@ -6,18 +6,18 @@ const Details = () => {
   console.log(data);
   return (
     <div>
-      <div className="w-4/5 h-[60vh] mx-auto my-10 border border-gray-300 rounded-lg shadow-lg overflow-hidden flex">
-        <div className="w-2/5">
+      <div className="w-full lg:w-4/5 lg:h-[60vh] mx-auto mt-6 lg:my-10 border border-gray-300 rounded-lg shadow-lg overflow-hidden lg:flex">
+        <div className="w-full lg:w-2/5">
           <img
             src={data.image}
             alt="Details"
-            className="w-full h-full object-cover" // Ensure the image covers the entire area
+            className="w-full h-[25vh] lg:h-full object-cover" // Ensure the image covers the entire area
           />
         </div>
 
-        <div className="w-3/5 p-6 flex flex-col justify-center items-center">
+        <div className=" w-full lg:w-3/5 p-6 flex flex-col justify-center items-center">
           <div>
-            <p className="text-5xl font-bold text-cyan-600 mb-4 ">
+            <p className=" text-3xl lg:text-5xl font-bold text-cyan-600 mb-4 ">
               Tourists
               <span className="text-rose-400">
                 <Typewriter
@@ -33,7 +33,7 @@ const Details = () => {
             </p>
           </div>
           {/* description */}
-          <p className="text-center mb-4 text-lg font-bold leading-loose	tracking-wide		">
+          <p className="text-center lg:mb-4 text-sm lg:text-lg font-bold leading-loose	tracking-wide		">
             Travelling is an amazing way to learn a lot of things in life.Thus,
             it offers not only a great way to understand human nature but also
             explore new places.
@@ -41,15 +41,15 @@ const Details = () => {
           <div className="text-center">
             {" "}
             {/* Center text horizontally */}
-            <h2 className="text-3xl font-bold text-cyan-400">
+            <h2 className="text-2xl lg:text-3xl font-bold text-cyan-400">
               Country:{" "}
               <span className="text-rose-400">{data.country_Name}</span>
             </h2>
-            <p className="mt-4 text-cyan-900 text-lg font-bold">
+            <p className="mt-2 lg:mt-4 text-cyan-900 text-lg font-bold">
               {data.short_description}
             </p>
           </div>
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center mt-2 lg:mt-6">
             {" "}
             {/* Center buttons horizontally */}
             <button className="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">

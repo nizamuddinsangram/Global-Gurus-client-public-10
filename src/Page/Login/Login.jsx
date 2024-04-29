@@ -91,17 +91,17 @@ const Login = () => {
         <title>Global Gurus Login</title>
       </Helmet>
       <div
-        className="flex h-screen bg-cover bg-center"
+        className="flex h-[70vh] lg:h-screen bg-cover bg-center "
         style={{ backgroundImage: `url(${img})` }}
       >
-        <div className="flex w-11/12 h-full items-center justify-center mx-auto rounded-lg">
+        <div className="lg:flex w-11/12  lg:h-full items-center justify-center mx-auto rounded-lg">
           {/* Left side with an image */}
-          <div className=" flex h-5/6 w-2/5	 items-center justify-center bg-opacity-0">
+          <div className="hidden lg:flex h-5/6 w-2/5	 items-center justify-center bg-opacity-0">
             <img src={img1} alt="Login" className="w-full h-full opacity-70" />
           </div>
 
           {/* Right side with input fields */}
-          <div className=" flex  h-5/6 w-3/5	 items-center justify-center bg-white bg-opacity-50 p-8">
+          <div className=" flex h-[70vh]  lg:h-5/6 w-full lg:w-3/5	 items-center justify-center  bg-white bg-opacity-50 p-8">
             <div className="w-full max-w-md">
               <h2 className="text-2xl font-bold mb-6 text-center">
                 Hello Friend

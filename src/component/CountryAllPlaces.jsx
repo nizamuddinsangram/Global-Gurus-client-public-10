@@ -10,7 +10,7 @@ const CountryAllPlaces = () => {
     );
   }
   return (
-    <div className="w-4/5  my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto justify-center items-center ">
+    <div className=" lg:w-4/5  mt-4 lg:my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto justify-center items-center ">
       {loaderData?.map((country) => (
         <div
           key={country?._id}
