@@ -43,7 +43,7 @@ const Banner = () => {
             alt="Image 3"
           />
         </div>
-        <div className="h-[40vh] lg:h-[80vh]] relative">
+        <div className="h-[40vh] lg:h-[80vh] relative">
           <img
             className="h-full w-full object-cover"
             src={img4}

@@ -159,17 +159,14 @@ const Navbar = () => {
           {user ? (
             <>
               <img
+                data-tooltip-id="logout-tooltip"
+                data-tooltip-content={user?.displayName}
                 src={user?.photoURL}
                 alt="img"
-                title={user?.displayName}
+                // title={user?.displayName}
                 className="w-10 mx-2 hidden lg:block h-10 rounded-full object-cover"
               />
-              <button
-                data-tooltip-id="logout-tooltip"
-                data-tooltip-content="Log Out"
-                className="btn btn-sm text-xl"
-                onClick={handleLogOut}
-              >
+              <button className="btn btn-sm text-xl" onClick={handleLogOut}>
                 logOut
               </button>
             </>
@@ -185,7 +182,13 @@ const Navbar = () => {
           />
         </div>
       </div>
-      <ReactTooltip id="logout-tooltip" place="bottom" effect="solid" />{" "}
+      <ReactTooltip
+        className="z-20 "
+        style={{ backgroundColor: "green", color: "white" }}
+        id="logout-tooltip"
+        place="bottom"
+        effect="solid"
+      />{" "}
       {/* Tooltip Component */}
     </>
   );

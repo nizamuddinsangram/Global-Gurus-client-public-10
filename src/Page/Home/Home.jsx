@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
@@ -36,11 +37,13 @@ const Home = () => {
               />
             </span>
           </p>
-          <p className="text-lg lg:text-xl  text-cyan-600">
-            These spots possess distinctive characteristics or features that
-            make them notable, <br />
-            appealing, and worthy of visitation
-          </p>
+          <Fade>
+            <p className="text-lg lg:text-xl  text-cyan-600">
+              These spots possess distinctive characteristics or features that
+              make them notable, <br />
+              appealing, and worthy of visitation
+            </p>
+          </Fade>
         </span>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 gap-10 ">
